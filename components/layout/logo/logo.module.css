@@ -1,0 +1,20 @@
+.logo {
+  font-size: var(--size-5);
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  color: var(--color-grey-50);
+  margin-top: -5px;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    font-size: var(--size-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+}
