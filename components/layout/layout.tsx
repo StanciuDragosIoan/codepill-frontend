@@ -13,7 +13,9 @@ function Layout({ children }: Props) {
   return (
     <div className={theme === "dark" ? classes.dark : classes.light}>
       <MainNavigation />
-      <main>{children}</main>
+      <div className={classes.container}>
+        <main>{children}</main>{" "}
+      </div>
     </div>
   );
 }
