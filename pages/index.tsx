@@ -3,7 +3,7 @@ import { UserContext } from "@/context/user";
 export default function Home() {
   return (
     <>
-      <h1>HomePage here</h1>
+      <h1>HomePage</h1>
     </>
   );
 }

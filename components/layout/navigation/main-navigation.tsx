@@ -3,9 +3,12 @@ import classes from "./main-navigation.module.css";
 import Logo from "../logo/logo";
 import { useContext, useEffect, useState, useMemo } from "react";
 import { UserContext } from "@/context/user";
+import Image from "next/image";
 function MainNavigation() {
   const { theme, setTheme } = useContext(UserContext);
-  // const [checked, setChecked] = useState(false);
+
+  const darkPlaceholder = "/assets/img/saber.png";
+  const lightPlaceholder = "/assets/img/mordred.png";
   const checked = useMemo(() => (theme === "dark" ? true : false), [theme]);
 
   const swapThemes = () => {
@@ -30,10 +33,8 @@ function MainNavigation() {
       theme = JSON.parse(isStore);
     } else {
       theme = "light";
-      // setChecked(true);
     }
     setTheme(theme);
-    // theme === "dark" ? setChecked(true) : setChecked(false);
   }, [theme, checked]);
 
   return (
@@ -75,6 +76,15 @@ function MainNavigation() {
           </ul>
         </nav>
       </header>
+
+      <div className={classes.placeholder}>
+        <Image
+          src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
+          alt="dark_girl"
+          width={150}
+          height={150}
+        />
+      </div>
     </>
   );
 }
