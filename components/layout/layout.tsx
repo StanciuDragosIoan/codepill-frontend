@@ -3,7 +3,7 @@ import classes from "./layout.module.css";
 import { useContext } from "react";
 import { UserContext } from "@/context/user";
 
-type Props = {
+export type Props = {
   children: string | JSX.Element | JSX.Element[];
 };
 

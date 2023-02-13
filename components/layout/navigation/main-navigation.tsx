@@ -60,6 +60,9 @@ function MainNavigation() {
               <Link href="/about">About</Link>
             </li>
             <li>
+              <Link href="/posts/post1">Post1</Link>
+            </li>
+            <li>
               <input
                 className={classes.input}
                 type="checkbox"
@@ -80,9 +83,10 @@ function MainNavigation() {
       <div className={classes.placeholder}>
         <Image
           src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
-          alt="dark_girl"
+          alt={theme === "dark" ? "dark_mode_picture" : "light_mode_picture"}
           width={150}
           height={150}
+          priority={true}
         />
       </div>
     </>
