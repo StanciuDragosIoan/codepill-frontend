@@ -14,11 +14,12 @@
 }
 
 .placeholder > img {
-  position: absolute;
+  position: fixed;
   right: 8%;
   border-radius: 50%;
   display: block;
   margin: 1rem auto;
+  z-index: 2;
 }
 
 .darkBg {
@@ -121,6 +122,13 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .placeholder > img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 @media (max-width: 480px) {
   .header {
     display: flex;
@@ -135,5 +143,15 @@
 
   .header {
     height: auto;
+  }
+
+  .header li {
+    margin: 0 var(--size-3);
+  }
+
+  .placeholder > img {
+    right: 1%;
+    width: 90px;
+    height: 90px;
   }
 }

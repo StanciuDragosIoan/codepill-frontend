@@ -1,12 +1,14 @@
 .light {
   background: var(--color-grey-100);
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   color: var(--color-grey-800);
 }
 
 .dark {
   background-color: var(--color-grey-800);
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   color: white;
 }
 
@@ -15,6 +17,8 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: -2rem;
+  max-width: 1200px;
 }
 @media (min-width: 768px) {
   .container {
@@ -29,5 +33,12 @@
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-right: 75px;
+    padding-left: 75px;
   }
 }

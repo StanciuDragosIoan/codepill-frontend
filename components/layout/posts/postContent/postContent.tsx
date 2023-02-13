@@ -1,48 +1,67 @@
-import React, { ReactNode, ReactElement, JSXElementConstructor } from "react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import { Post } from "@/pages/posts/[slug]";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import xonokai from "react-syntax-highlighter/dist/cjs/styles/prism/xonokai";
+import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
 
-type NodeToProps<T> = {
-  node: T;
-  children: T extends { children: any } ? ReactNode : never;
-};
-
-// type CustomRenderers = {
-//   [K in Content["type"]]?: (
-//     props: NodeToProps<Extract<Content, { type: K }>>
-//   ) => ReactElement;
-// };
+import classes from "./postContent.module.css";
+import { Post } from "@/domain/posts/types/posts.types";
+import { useContext } from "react";
+import { UserContext } from "@/context/user";
 
 const PostContent = ({ post }: { post: Post }) => {
+  const { theme } = useContext(UserContext);
+
+  const getContentStyle = () => {
+    return theme === "dark" ? classes.dark : classes.light;
+  };
+
+  const getEditorStyle = () => {
+    return theme === "dark" ? xonokai : okaidia;
+  };
+
   const customRenderer: any = {
     p: (paragraph: { children?: boolean; node?: any }) => {
       const { node } = paragraph;
       if (node.children[0].tagName === "img") {
-        console.log("IMG RENDER");
         const image = node.children[0];
+
         const width = 600;
         const height = 300;
         const alt = image.properties.alt;
         const srcProp = `/assets/img/posts/${post.slug}/${image.properties.src}`;
+
         return (
-          <Image
-            src={srcProp}
-            width={width}
-            height={height}
-            className="postImg"
-            alt={alt}
-          />
+          <div className={classes.imageContainer}>
+            <Image
+              className={classes.image}
+              priority={true}
+              src={srcProp}
+              width={width}
+              height={height}
+              alt={alt}
+            />{" "}
+          </div>
         );
       } else {
         return <p>{paragraph.children}</p>;
       }
     },
+    code: (code: { children: Array<string>; node?: any; language: string }) => {
+      const { language, children } = code;
+
+      const snippet = children[0];
+      return (
+        <SyntaxHighlighter style={getEditorStyle()} language={language}>
+          {snippet}
+        </SyntaxHighlighter>
+      );
+    },
   };
   return (
-    <>
+    <article className={classes.content + getContentStyle()}>
       <ReactMarkdown components={customRenderer}>{post.content}</ReactMarkdown>
-    </>
+    </article>
   );
 };
 

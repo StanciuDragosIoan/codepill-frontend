@@ -1,19 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostsFiles, getPostData } from "@/lib/posts-utils";
 import PostContent from "@/components/layout/posts/postContent/postContent";
+import { Post } from "@/domain/posts/types/posts.types";
 import { ParsedUrlQuery } from "querystring";
 interface IParams extends ParsedUrlQuery {
   slug: string;
-}
-
-export interface Post {
-  content: string;
-  date: string;
-  slug: string;
-  title: string;
-  image: string;
-  isFeatured: boolean;
-  excerpt: string;
 }
 
 function IndividualPost({ post }: { post: Post }) {

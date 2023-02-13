@@ -1,0 +1,33 @@
+.content {
+  margin: var(--size-8) auto;
+  font-size: var(--size-5);
+  line-height: var(--size-8);
+  background-color: var(--color-grey-100);
+  border-radius: 6px;
+  padding: var(--size-4);
+}
+
+.content p {
+  color: var(--color-grey-800);
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.imageContainer > div {
+  position: unset !important;
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: var(--size-8);
+  }
+}
