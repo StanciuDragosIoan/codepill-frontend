@@ -1,7 +1,7 @@
 export interface Post {
   content: string;
-  date: string;
   slug: string;
+  date: string;
   title: string;
   image: string;
   isFeatured: boolean;

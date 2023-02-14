@@ -38,7 +38,7 @@
 
 @media (max-width: 480px) {
   .container {
-    padding-right: 75px;
-    padding-left: 75px;
+    /* padding-right: 25px;
+    padding-left: 25px; */
   }
 }

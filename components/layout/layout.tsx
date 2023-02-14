@@ -2,9 +2,12 @@ import MainNavigation from "./navigation/main-navigation";
 import classes from "./layout.module.css";
 import { useContext } from "react";
 import { UserContext } from "@/context/user";
+import { Post } from "@/domain/posts/types/posts.types";
 
 export type Props = {
-  children: string | JSX.Element | JSX.Element[];
+  children?: string | JSX.Element | JSX.Element[];
+  posts?: Post[];
+  post?: Post;
 };
 
 function Layout({ children }: Props) {

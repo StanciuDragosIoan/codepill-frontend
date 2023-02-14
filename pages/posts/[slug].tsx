@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostsFiles, getPostData } from "@/lib/posts-utils";
-import PostContent from "@/components/layout/posts/postContent/postContent";
+import PostContent from "@/components/posts/postContent/postContent";
 import { Post } from "@/domain/posts/types/posts.types";
 import { ParsedUrlQuery } from "querystring";
 interface IParams extends ParsedUrlQuery {

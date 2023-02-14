@@ -13,31 +13,24 @@ export function getPostData(postIdentifier: string) {
   const filePath = path.join(postsDirectory, `/${postSlug}/${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
+
   const postData = {
     slug: postSlug,
     ...data,
     content,
+    date: data.date.toString(),
   };
 
   return postData;
 }
 
-// export function getAllPosts() {
-//   const postFiles = getPostsFiles();
+export function getAllPosts() {
+  const postFiles = getPostsFiles();
 
-//   const allPosts = postFiles.map((postFile) => getPostData(postFile));
+  const allPosts = postFiles.map((postFile) => getPostData(postFile));
+  const sortedPosts = allPosts.sort((postA, postB) => {
+    return new Date(postA.date).getTime() - new Date(postB.date).getTime();
+  });
 
-//   const sortedPosts = allPosts.sort((postA, postB) =>
-//     postA.date > postB.date ? -1 : 1
-//   ); //order chronologically
-
-//   return sortedPosts;
-// }
-
-// export function getFeaturedPosts() {
-//   const allPosts = getAllPosts();
-
-//   const featuredPosts = allPosts.filter((p) => p.isFeatured);
-
-//   return featuredPosts;
-// }
+  return sortedPosts;
+}

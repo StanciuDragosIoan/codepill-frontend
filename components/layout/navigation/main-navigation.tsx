@@ -60,9 +60,6 @@ function MainNavigation() {
               <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/posts/post1">Post1</Link>
-            </li>
-            <li>
               <input
                 className={classes.input}
                 type="checkbox"
