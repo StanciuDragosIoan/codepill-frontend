@@ -85,7 +85,10 @@ function MainNavigation() {
             width={150}
             height={150}
             priority={true}
-            onDoubleClick={() => setShow(false)}
+            onDoubleClick={() => {
+              console.log("te fut");
+              setShow(false);
+            }}
           />
           <span className={classes.tooltip}>
             Double Click to make me go away (｡•́︿•̀｡)
