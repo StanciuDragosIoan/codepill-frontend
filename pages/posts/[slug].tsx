@@ -10,7 +10,6 @@ interface IParams extends ParsedUrlQuery {
 function IndividualPost({ post }: { post: Post }) {
   return (
     <>
-      <h1>IndividualPostPage</h1>
       <PostContent post={post} />
     </>
   );

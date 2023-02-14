@@ -6,11 +6,13 @@ import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
 
 import classes from "./postContent.module.css";
 import { Post } from "@/domain/posts/types/posts.types";
+import PostHeader from "./postHeader";
 import { useContext } from "react";
 import { UserContext } from "@/context/user";
 
 const PostContent = ({ post }: { post: Post }) => {
   const { theme } = useContext(UserContext);
+  const imagePath = `/assets/img/posts/${post.slug}/${post.image}`;
 
   const getContentStyle = () => {
     return theme === "dark" ? classes.dark : classes.light;
@@ -30,7 +32,6 @@ const PostContent = ({ post }: { post: Post }) => {
         const height = 300;
         const alt = image.properties.alt;
         const srcProp = `/assets/img/posts/${post.slug}/${image.properties.src}`;
-
         return (
           <div className={classes.imageContainer}>
             <Image
@@ -60,6 +61,7 @@ const PostContent = ({ post }: { post: Post }) => {
   };
   return (
     <article className={classes.content + getContentStyle()}>
+      <PostHeader title={post.title} image={imagePath} />
       <ReactMarkdown components={customRenderer}>{post.content}</ReactMarkdown>
     </article>
   );

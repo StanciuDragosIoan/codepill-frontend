@@ -8,6 +8,8 @@ export type Props = {
   children?: string | JSX.Element | JSX.Element[];
   posts?: Post[];
   post?: Post;
+  title?: string;
+  image?: string;
 };
 
 function Layout({ children }: Props) {

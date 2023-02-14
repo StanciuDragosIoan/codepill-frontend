@@ -6,6 +6,7 @@ import { UserContext } from "@/context/user";
 import Image from "next/image";
 function MainNavigation() {
   const { theme, setTheme } = useContext(UserContext);
+  const [isShow, setShow] = useState(true);
 
   const darkPlaceholder = "/assets/img/saber.png";
   const lightPlaceholder = "/assets/img/mordred.png";
@@ -76,16 +77,21 @@ function MainNavigation() {
           </ul>
         </nav>
       </header>
-
-      <div className={classes.placeholder}>
-        <Image
-          src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
-          alt={theme === "dark" ? "dark_mode_picture" : "light_mode_picture"}
-          width={150}
-          height={150}
-          priority={true}
-        />
-      </div>
+      {isShow && (
+        <div className={classes.placeholder}>
+          <Image
+            src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
+            alt={theme === "dark" ? "dark_mode_picture" : "light_mode_picture"}
+            width={150}
+            height={150}
+            priority={true}
+            onDoubleClick={() => setShow(false)}
+          />
+          <span className={classes.tooltip}>
+            Double Click to make me go away (｡•́︿•̀｡)
+          </span>
+        </div>
+      )}
     </>
   );
 }
