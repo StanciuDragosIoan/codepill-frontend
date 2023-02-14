@@ -13,6 +13,8 @@ function MainNavigation() {
   const checked = useMemo(() => (theme === "dark" ? true : false), [theme]);
 
   const swapThemes = () => {
+    console.log("test");
+    setShow(true);
     if (theme === "dark") {
       setTheme("light");
     }
@@ -36,7 +38,7 @@ function MainNavigation() {
       theme = "light";
     }
     setTheme(theme);
-  }, [theme, checked]);
+  }, [theme, checked, setTheme]);
 
   return (
     <>
@@ -78,17 +80,14 @@ function MainNavigation() {
         </nav>
       </header>
       {isShow && (
-        <div className={classes.placeholder}>
+        <div className={classes.placeholder} key={Math.random()}>
           <Image
             src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
             alt={theme === "dark" ? "dark_mode_picture" : "light_mode_picture"}
             width={150}
             height={150}
             priority={true}
-            onDoubleClick={() => {
-              console.log("te fut");
-              setShow(false);
-            }}
+            onDoubleClick={() => setShow(false)}
           />
           <span className={classes.tooltip}>
             Double Click to make me go away (｡•́︿•̀｡)

@@ -183,20 +183,10 @@
 @media (hover: hover) {
   .placeholder > img:hover + .tooltip {
     opacity: 1;
-    animation: hideAnimation 0s ease-in 5s;
-    animation-fill-mode: forwards;
   }
 }
 @media (hover: none) {
   .placeholder > img:hover + .tooltip {
     opacity: 1;
-    animation: hideAnimation 0s ease-in 5s;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes hideAnimation {
-  to {
-    opacity: 0;
   }
 }

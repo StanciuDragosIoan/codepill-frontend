@@ -19,6 +19,7 @@ export function getPostData(postIdentifier: string) {
     ...data,
     content,
     date: data.date.toString(),
+    isFeatured: data.isFeatured,
   };
 
   return postData;
@@ -33,4 +34,12 @@ export function getAllPosts() {
   });
 
   return sortedPosts;
+}
+
+export function getFeaturedPosts() {
+  const allPosts = getAllPosts();
+
+  const featuredPosts = allPosts.filter((p) => p.isFeatured);
+
+  return featuredPosts;
 }

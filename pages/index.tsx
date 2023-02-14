@@ -1,9 +1,23 @@
-import { useContext } from "react";
-import { UserContext } from "@/context/user";
-export default function Home() {
+import Hero from "@/components/hero/hero";
+import FeaturedPosts from "@/components/posts/featuredPosts/featuredPosts";
+import { Props } from "@/components/layout/layout";
+import { getFeaturedPosts } from "@/lib/posts-utils";
+export default function Home(props: Props) {
+  const { posts } = props;
   return (
     <>
-      <h1>HomePage</h1>
+      <Hero />
+      <FeaturedPosts posts={posts} />
     </>
   );
+}
+
+export function getStaticProps() {
+  const featuredPosts = getFeaturedPosts();
+
+  return {
+    props: {
+      posts: featuredPosts,
+    },
+  };
 }
