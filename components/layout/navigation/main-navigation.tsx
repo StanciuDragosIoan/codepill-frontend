@@ -1,5 +1,6 @@
 import Link from "next/link";
 import classes from "./main-navigation.module.css";
+import globalClasses from "@/styles/shared.module.css";
 import Logo from "../logo/logo";
 import { useContext, useEffect, useState, useMemo } from "react";
 import { UserContext } from "@/context/user";
@@ -13,7 +14,6 @@ function MainNavigation() {
   const checked = useMemo(() => (theme === "dark" ? true : false), [theme]);
 
   const swapThemes = () => {
-    console.log("test");
     setShow(true);
     if (theme === "dark") {
       setTheme("light");
@@ -44,7 +44,7 @@ function MainNavigation() {
     <>
       <header
         className={`${classes.header} ${
-          theme === "dark" ? classes.darkBg : classes.lightBg
+          theme === "dark" ? globalClasses.navDarkBg : globalClasses.navLightBg
         }`}
       >
         <Link href="/">
@@ -58,9 +58,6 @@ function MainNavigation() {
             </li>
             <li>
               <Link href="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
             </li>
             <li>
               <input

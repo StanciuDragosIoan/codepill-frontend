@@ -5,6 +5,7 @@ import xonokai from "react-syntax-highlighter/dist/cjs/styles/prism/xonokai";
 import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
 
 import classes from "./postContent.module.css";
+import globalClasses from "@/styles/shared.module.css";
 import { Post } from "@/domain/posts/types/posts.types";
 import PostHeader from "./postHeader";
 import { useContext } from "react";
@@ -13,10 +14,6 @@ import { UserContext } from "@/context/user";
 const PostContent = ({ post }: { post: Post }) => {
   const { theme } = useContext(UserContext);
   const imagePath = `/assets/img/posts/${post.slug}/${post.image}`;
-
-  const getContentStyle = () => {
-    return theme === "dark" ? classes.dark : classes.light;
-  };
 
   const getEditorStyle = () => {
     return theme === "dark" ? xonokai : okaidia;
@@ -27,7 +24,6 @@ const PostContent = ({ post }: { post: Post }) => {
       const { node } = paragraph;
       if (node.children[0].tagName === "img") {
         const image = node.children[0];
-
         const width = 600;
         const height = 300;
         const alt = image.properties.alt;
@@ -45,7 +41,17 @@ const PostContent = ({ post }: { post: Post }) => {
           </div>
         );
       } else {
-        return <p>{paragraph.children}</p>;
+        return (
+          <p
+            className={
+              theme === "dark"
+                ? globalClasses.contentDark
+                : globalClasses.contentLight
+            }
+          >
+            {paragraph.children}
+          </p>
+        );
       }
     },
     code: (code: { children: Array<string>; node?: any; language: string }) => {
@@ -60,9 +66,24 @@ const PostContent = ({ post }: { post: Post }) => {
     },
   };
   return (
-    <article className={classes.content + getContentStyle()}>
+    <article
+      className={`${classes.content} ${
+        theme === "dark"
+          ? globalClasses.contentDark
+          : globalClasses.contentLight
+      }`}
+    >
       <PostHeader title={post.title} image={imagePath} />
-      <ReactMarkdown components={customRenderer}>{post.content}</ReactMarkdown>
+      <ReactMarkdown
+        className={
+          theme === "dark"
+            ? globalClasses.contentDark
+            : globalClasses.contentLight
+        }
+        components={customRenderer}
+      >
+        {post.content}
+      </ReactMarkdown>
     </article>
   );
 };

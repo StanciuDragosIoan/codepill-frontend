@@ -1,7 +1,7 @@
 .post {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  background-color: var(--color-grey-800);
   text-align: center;
+  border-radius: var(--size-4);
 }
 
 .post a {
@@ -29,7 +29,6 @@
 
 .content time {
   font-style: italic;
-  color: var(--color-grey-300);
 }
 
 .content p {

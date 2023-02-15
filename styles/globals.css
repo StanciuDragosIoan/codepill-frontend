@@ -42,8 +42,25 @@ body {
   --size-20: 5rem;
   --size-40: 10rem;
 
+  --gradient-dark: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(6, 6, 79, 1) 19%,
+    rgba(4, 63, 128, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  --gradient-light: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(6, 6, 79, 1) 0%,
+    rgba(0, 208, 251, 1) 0%,
+    rgba(0, 207, 250, 1) 17%,
+    rgba(4, 63, 128, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
   margin: 0;
-  /* background-color: var(--color-grey-500); */
   color: #252525;
   font-family: "Roboto", sans-serif;
 }

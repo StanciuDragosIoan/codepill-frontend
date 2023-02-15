@@ -1,0 +1,36 @@
+.darkBg {
+  background: var(--gradient-light);
+}
+
+.lightBg {
+  background: var(--gradient-dark);
+}
+
+.navDarkBg {
+  background: var(--gradient-light);
+  background: var(--color-grey-900);
+}
+
+.navLightBg {
+  background: var(--gradient-light);
+  background: var(--color-primary-700);
+}
+
+.contentDark {
+  color: var(--color-grey-300) !important;
+  background: var(--color-grey-800) !important;
+}
+
+.contentLight {
+  color: #fff !important;
+  background: var(--color-primary-600) !important;
+}
+
+.contentLight h2,
+.contentDark h2 {
+  text-align: center;
+}
+
+.white {
+  color: #fff !important;
+}

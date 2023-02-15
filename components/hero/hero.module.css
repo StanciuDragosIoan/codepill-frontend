@@ -1,20 +1,12 @@
 .heroDark {
   text-align: center;
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-grey-900),
-    var(--color-grey-500)
-  );
+  background-color: var(--color-grey-800);
   padding: var(--size-8) 0;
 }
 
 .heroLight {
   text-align: center;
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-grey-700),
-    var(--color-grey-500)
-  );
+  background-color: var(--color-primary-500);
   padding: var(--size-8) 0;
   color: white;
 }

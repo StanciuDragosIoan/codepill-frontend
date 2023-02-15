@@ -3,7 +3,6 @@ import Image from "next/image";
 import classes from "./postHeader.module.css";
 
 function PostHeader(props: Props) {
-  console.log(props);
   const { title, image } = props;
 
   if (title && image) {

@@ -2,6 +2,7 @@ import { UserContext } from "@/context/user";
 import Image from "next/image";
 import { useContext } from "react";
 import classes from "./hero.module.css";
+import globalClasses from "@/styles/shared.module.css";
 
 function Hero() {
   const { theme } = useContext(UserContext);

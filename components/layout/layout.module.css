@@ -1,25 +1,34 @@
 .light {
-  background: var(--color-grey-100);
+  background: var(--gradient-light);
   height: auto;
   min-height: 100vh;
   color: var(--color-grey-800);
 }
 
 .dark {
-  background-color: var(--color-grey-800);
+  background: var(--gradient-dark);
   height: auto;
   min-height: 100vh;
   color: white;
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: -2rem;
   max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
+.footer {
+  height: 5rem;
+  margin-top: 5rem;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -33,12 +42,5 @@
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    /* padding-right: 25px;
-    padding-left: 25px; */
   }
 }
