@@ -1,17 +1,3 @@
-.light {
-  background: var(--gradient-light);
-  height: auto;
-  min-height: 100vh;
-  color: var(--color-grey-800);
-}
-
-.dark {
-  background: var(--gradient-dark);
-  height: auto;
-  min-height: 100vh;
-  color: white;
-}
-
 .container {
   margin-right: auto;
   margin-left: auto;

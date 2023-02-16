@@ -1,9 +1,9 @@
 .darkBg {
-  background: var(--gradient-light);
+  background: var(--gradient-dark);
 }
 
 .lightBg {
-  background: var(--gradient-dark);
+  background: var(--gradient-light);
 }
 
 .navDarkBg {
@@ -23,7 +23,7 @@
 
 .contentLight {
   color: #fff !important;
-  background: var(--color-primary-600) !important;
+  background: var(--color-grey-400) !important;
 }
 
 .contentLight h2,

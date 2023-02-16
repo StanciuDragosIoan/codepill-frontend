@@ -8,7 +8,11 @@ function Hero() {
   const { theme } = useContext(UserContext);
   return (
     <section
-      className={theme === "dark" ? classes.heroDark : classes.heroLight}
+      className={
+        globalClasses.white + theme === "dark"
+          ? classes.heroDark
+          : classes.heroLight
+      }
     >
       <div className={classes.image}>
         <Image

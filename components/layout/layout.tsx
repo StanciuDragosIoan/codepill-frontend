@@ -19,7 +19,11 @@ function Layout({ children }: Props) {
   const { theme } = useContext(UserContext);
 
   return (
-    <div className={theme === "dark" ? classes.dark : classes.light}>
+    <div
+      className={
+        theme === "dark" ? globalClasses.darkBg : globalClasses.lightBg
+      }
+    >
       <MainNavigation />
       <div className={classes.container}>
         <main>{children}</main>{" "}
