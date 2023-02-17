@@ -2,17 +2,14 @@ import { UserContext } from "@/context/user";
 import Image from "next/image";
 import { useContext } from "react";
 import classes from "./hero.module.css";
-import globalClasses from "@/styles/shared.module.css";
 
 function Hero() {
   const { theme } = useContext(UserContext);
+
+  console.log(theme);
   return (
     <section
-      className={
-        globalClasses.white + theme === "dark"
-          ? classes.heroDark
-          : classes.heroLight
-      }
+      className={theme === "dark" ? classes.heroDark : classes.heroLight}
     >
       <div className={classes.image}>
         <Image

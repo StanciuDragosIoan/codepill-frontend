@@ -4,6 +4,7 @@ import { Props } from "@/components/layout/layout";
 import { getFeaturedPosts } from "@/lib/posts-utils";
 export default function Home(props: Props) {
   const { posts } = props;
+
   return (
     <>
       <Hero />

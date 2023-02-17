@@ -1,12 +1,13 @@
 .heroDark {
   text-align: center;
   background-color: var(--color-grey-800);
+  color: white;
   padding: var(--size-8) 0;
 }
 
 .heroLight {
   text-align: center;
-  background-color: var(--color-primary-500);
+  background-color: var(--color-primary-100);
   padding: var(--size-8) 0;
   color: white;
 }
@@ -17,7 +18,6 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   overflow: hidden;
-  background-color: var(--color-grey-700);
   margin: auto;
 }
 
