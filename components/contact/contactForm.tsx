@@ -19,6 +19,8 @@ async function sendData(contactDetails: {
 
   const data = await res.json();
 
+  console.log(data);
+
   if (!res.ok) {
     throw new Error("something went wrong");
   }
