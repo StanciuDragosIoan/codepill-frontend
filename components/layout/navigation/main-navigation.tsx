@@ -29,16 +29,16 @@ function MainNavigation() {
     }
   };
 
-  useEffect(() => {
-    const isStore = localStorage.getItem("codePillTheme");
-    let theme;
-    if (isStore) {
-      theme = JSON.parse(isStore);
-    } else {
-      theme = "light";
-    }
-    setTheme(theme);
-  }, [theme, checked, setTheme]);
+  // useEffect(() => {
+  //   const isStore = localStorage.getItem("codePillTheme");
+  //   let theme;
+  //   if (isStore) {
+  //     theme = JSON.parse(isStore);
+  //   } else {
+  //     theme = "light";
+  //   }
+  //   setTheme(theme);
+  // }, [theme, checked, setTheme]);
 
   return (
     <>
