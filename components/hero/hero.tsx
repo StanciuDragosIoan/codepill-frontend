@@ -6,7 +6,6 @@ import classes from "./hero.module.css";
 function Hero() {
   const { theme } = useContext(UserContext);
 
-  console.log(theme);
   return (
     <section
       className={theme === "dark" ? classes.heroDark : classes.heroLight}
