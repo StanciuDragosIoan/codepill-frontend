@@ -2,7 +2,6 @@ import { UserContext } from "@/context/user";
 import Image from "next/image";
 import { useContext, useState } from "react";
 import classes from "./contactForm.module.css";
-// import Notification from "../ui/notification";
 
 async function sendData(contactDetails: {
   email: string;
@@ -35,78 +34,17 @@ function ContactForm() {
   async function sendMessage(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
 
-    // setRequestStatus("pending");
-
     try {
       await sendData({
         email: enteredEmail,
         name: enteredName,
         message: enteredMessage,
       });
-      // setRequestStatus("success");
       setEmail("");
       setMessage("");
       setName("");
-    } catch (err) {
-      // setRequestStatus("error");
-    }
+    } catch (err) {}
   }
-
-  //   useEffect(() => {
-  //     if (requestStatus === "success" || requestStatus === "error") {
-  //       const timer = setTimeout(() => {
-  //         setRequestStatus(null);
-  //       }, 3000);
-
-  //       return () => clearTimeout(timer);
-  //     }
-  //   }, [requestStatus]);
-
-  //   async function sendMessageHandler(event) {
-  //     event.preventDefault();
-
-  //     setRequestStatus("pending");
-
-  //     try {
-  //       await sendData({
-  //         email: enteredEmail,
-  //         name: enteredName,
-  //         message: enteredMessage,
-  //       });
-  //       setRequestStatus("success");
-  //       setEmail("");
-  //       setMessage("");
-  //       setName("");
-  //     } catch (err) {
-  //       setRequestStatus("error");
-  //     }
-  //   }
-
-  //   let notification;
-
-  //   if (requestStatus === "pending") {
-  //     notification = {
-  //       status: "pending",
-  //       title: "sending message",
-  //       message: "your msg is on its way",
-  //     };
-  //   }
-
-  //   if (requestStatus === "success") {
-  //     notification = {
-  //       status: "success",
-  //       title: "success",
-  //       message: "msg was sent",
-  //     };
-  //   }
-
-  //   if (requestStatus === "error") {
-  //     notification = {
-  //       status: "error",
-  //       title: "error",
-  //       message: "something went wrong",
-  //     };
-  //   }
 
   return (
     <section className={classes.contact}>

@@ -25,20 +25,10 @@ function MainNavigation() {
     if (typeof window !== "undefined") {
       let themeToSave;
       theme === "dark" ? (themeToSave = "light") : (themeToSave = "dark");
-      localStorage.setItem("codePillTheme", JSON.stringify(themeToSave));
+      const persistentCookie = `codePillTheme=${themeToSave}; path=/; max-age=2628000`;
+      document.cookie = persistentCookie;
     }
   };
-
-  // useEffect(() => {
-  //   const isStore = localStorage.getItem("codePillTheme");
-  //   let theme;
-  //   if (isStore) {
-  //     theme = JSON.parse(isStore);
-  //   } else {
-  //     theme = "light";
-  //   }
-  //   setTheme(theme);
-  // }, [theme, checked, setTheme]);
 
   return (
     <>

@@ -11,12 +11,14 @@ function PostsPage(props: Props) {
   );
 }
 
-export function getStaticProps() {
+export function getServerSideProps(ctx: any) {
+  const { codePillTheme } = ctx.req.cookies;
   const allPosts = getAllPosts();
 
   return {
     props: {
       posts: allPosts,
+      theme: codePillTheme || "light",
     },
   };
 }

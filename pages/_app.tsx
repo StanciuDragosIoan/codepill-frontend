@@ -5,7 +5,7 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <UserContextProvider>
+    <UserContextProvider themeProp={pageProps.theme}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

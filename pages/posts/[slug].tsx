@@ -15,31 +15,21 @@ function IndividualPost({ post }: { post: Post }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context;
+export function getServerSideProps(ctx: any) {
+  const { params } = ctx;
 
   const { slug } = params as IParams;
 
   const postData = getPostData(slug);
 
+  const { codePillTheme } = ctx.req.cookies;
+
   return {
     props: {
       post: postData,
+      theme: codePillTheme || "light",
     },
-
-    revalidate: 600, //faster here because it's only for 1 single post
   };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const fileNames = getPostsFiles();
-
-  const slugs = fileNames.map((i) => i.replace(".md", ""));
-
-  return {
-    paths: slugs.map((slug) => ({ params: { slug: slug } })),
-    fallback: false,
-  };
-};
+}
 
 export default IndividualPost;

@@ -12,10 +12,12 @@ export const UserContext = createContext<UserContextType>({
 
 type Props = {
   children: string | JSX.Element | JSX.Element[];
+  themeProp?: string;
 };
 
-export const UserContextProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState("light");
+export const UserContextProvider = (props: Props) => {
+  const { children, themeProp } = props;
+  const [theme, setTheme] = useState(themeProp ? themeProp : "light");
 
   return (
     <UserContext.Provider

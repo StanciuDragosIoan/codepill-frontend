@@ -13,12 +13,14 @@ export default function Home(props: Props) {
   );
 }
 
-export function getStaticProps() {
+export function getServerSideProps(ctx: any) {
+  const { codePillTheme } = ctx.req.cookies;
   const featuredPosts = getFeaturedPosts();
 
   return {
     props: {
       posts: featuredPosts,
+      theme: codePillTheme || "light",
     },
   };
 }

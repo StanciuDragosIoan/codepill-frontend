@@ -6,3 +6,13 @@ export default function ContactPage() {
     </>
   );
 }
+
+export function getServerSideProps(ctx: any) {
+  const { codePillTheme } = ctx.req.cookies;
+
+  return {
+    props: {
+      theme: codePillTheme || "light",
+    },
+  };
+}
