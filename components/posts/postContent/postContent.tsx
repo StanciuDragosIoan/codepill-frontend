@@ -8,7 +8,7 @@ import classes from "./postContent.module.css";
 import globalClasses from "@/styles/shared.module.css";
 import { Post } from "@/domain/posts/types/posts.types";
 import PostHeader from "./postHeader";
-import { useContext } from "react";
+import { SyntheticEvent, useContext } from "react";
 import { UserContext } from "@/context/user";
 
 const PostContent = ({ post }: { post: Post }) => {
@@ -17,6 +17,10 @@ const PostContent = ({ post }: { post: Post }) => {
 
   const getEditorStyle = () => {
     return theme === "dark" ? xonokai : okaidia;
+  };
+  const copySnippet = (e: SyntheticEvent) => {
+    const snippetCode = e.currentTarget.parentNode!.children[1].textContent;
+    navigator.clipboard.writeText(snippetCode!);
   };
 
   const customRenderer: any = {
@@ -59,9 +63,14 @@ const PostContent = ({ post }: { post: Post }) => {
 
       const snippet = children[0];
       return (
-        <SyntaxHighlighter style={getEditorStyle()} language={language}>
-          {snippet}
-        </SyntaxHighlighter>
+        <div className={classes.relative}>
+          <button onClick={copySnippet} className={classes.copyBtn}>
+            <i className="fa-solid fa-copy"></i>
+          </button>
+          <SyntaxHighlighter style={getEditorStyle()} language={language}>
+            {snippet}
+          </SyntaxHighlighter>
+        </div>
       );
     },
   };
@@ -81,6 +90,7 @@ const PostContent = ({ post }: { post: Post }) => {
             : globalClasses.contentLight
         }
         components={customRenderer}
+        linkTarget="_blank"
       >
         {post.content}
       </ReactMarkdown>

@@ -11,6 +11,33 @@
   color: var(--color-grey-800);
 }
 
+.content a {
+  color: #ccc;
+  font-weight: bold;
+}
+
+.relative {
+  position: relative;
+}
+
+.copyBtn {
+  color: #ccc;
+  background: #000;
+  border: 3px solid #ccc;
+  border-radius: 15%;
+  z-index: 1;
+  position: absolute;
+  top: 4%;
+  left: 90%;
+}
+
+.copyBtn:focus {
+  color: #000;
+  background: #ccc;
+  border: 3px solid #7c7979;
+  transition: 0.5s;
+}
+
 .imageContainer {
   width: 100%;
 }
@@ -29,5 +56,11 @@
 @media (min-width: 768px) {
   .content {
     padding: var(--size-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .copyBtn {
+    left: 85%;
   }
 }
