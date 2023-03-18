@@ -3,6 +3,7 @@ import { getPostsFiles, getPostData } from "@/lib/posts-utils";
 import PostContent from "@/components/posts/postContent/postContent";
 import { Post } from "@/domain/posts/types/posts.types";
 import { ParsedUrlQuery } from "querystring";
+import Head from "next/head";
 interface IParams extends ParsedUrlQuery {
   slug: string;
 }
@@ -10,6 +11,9 @@ interface IParams extends ParsedUrlQuery {
 function IndividualPost({ post }: { post: Post }) {
   return (
     <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
       <PostContent post={post} />
     </>
   );

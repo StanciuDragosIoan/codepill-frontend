@@ -2,20 +2,13 @@
 title: "Intro to web Dev"
 date: "2021-04-07"
 image: request.jpg
-excerpt: NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.
+excerpt: As the title involves, this article represents an introduction to web development. We will see very briefly how the web works what are its main technologies (namely HTML , CSS and JavaScript).
 isFeatured: true
 ---
 
 Published **7th April 2021**.
 
-As the title involves, this article represents an introduction to web development. We will see very briefly how the web works and we will get a bit familiar with the main technologies of the web (namely HTML , CSS and JavaScript). Finally, after 'getting our feet wet' a bit, and understanding how everything works, we will build a little project together.
-
-This project will be a nice warm-up for future projects, and it will help
-you get familiar with how a JavaScript application is built, without any
-framework. This will help you regardless of which framework you will use
-(as you will build something using the full power of JavaScript, power on
-which all the hot frameworks now and I mean React, Angular or VueJS are
-built).
+As the title involves, this article represents an introduction to web development. We will see very briefly how the web works and we will get a bit familiar with the main technologies of the web (namely HTML , CSS and JavaScript).
 
 ## How the web works
 
@@ -24,8 +17,6 @@ The web is like a huge network (it reaches all over the world, and anyone can 't
 ![how the web works](request.jpg)
 
 Of course there are many types of content we can request from a server (we can have a simple webpage but also a video, a game, etc...) and we will not dive deep into this for now. We can also have multiple types of HTTP Requests like: [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET), [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST), [PUT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT), [PATCH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH), [DELETE](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE). Feel free to read about them, but I think for this introductory article, we do not need to look at them in detail.
-
-This article is meant for those who have never wrote a line of code, and who will still, be able to build a nice application by reading it. For those of you who have prior experience, feel free to just skip below to building the application as you will definitely learn something new from it.
 
 ## HTML, CSS, JS basics
 
@@ -407,6 +398,6 @@ Now whatever you type in the field will get put in the green header.
 
 This is how you 'connect' **HTML** code with a **CSS** and **JavaScript**. These three technologies together, can do many awesome things and you will love to use them.
 
-If you never wrote a line of code, I bet you feel a bit like a wizzard now. At least that's how I felt when I first connected some **HTML** code with a **CSS** file and some **JavaScript** code.
+If you never wrote a line of code, I bet you feel a bit like a wizard now. At least that's how I felt when I first connected some **HTML** code with a **CSS** file and some **JavaScript** code.
 
-## Building a real application
+I really hope you enjoyed this introduction to web development. In the next post, we will be building a real application. If you want to already start working on that, click [Here](https://reactjs.org/).
