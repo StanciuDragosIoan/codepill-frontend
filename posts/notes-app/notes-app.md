@@ -2,7 +2,7 @@
 title: "Notes App"
 date: "2021-04-07"
 image: notes.png
-excerpt: NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.
+excerpt: Now, that we have 'got our feet wet' and we know how **HTML**, **CSS** and **JavaScript** work together, we can try to put together a little project.
 isFeatured: true
 ---
 

@@ -48,7 +48,9 @@
 
 .image {
   object-fit: contain;
-  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
+  margin: auto;
   position: relative !important;
   height: unset !important;
 }

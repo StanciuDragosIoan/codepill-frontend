@@ -41,7 +41,7 @@ const PostContent = ({ post }: { post: Post }) => {
               width={width}
               height={height}
               alt={alt}
-            />{" "}
+            />
           </div>
         );
       } else {
