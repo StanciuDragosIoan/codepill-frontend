@@ -30,7 +30,7 @@ export function getAllPosts() {
 
   const allPosts = postFiles.map((postFile) => getPostData(postFile));
   const sortedPosts = allPosts.sort((postA, postB) => {
-    return new Date(postA.date).getTime() - new Date(postB.date).getTime();
+    return new Date(postB.date).getTime() - new Date(postA.date).getTime();
   });
 
   return sortedPosts;
