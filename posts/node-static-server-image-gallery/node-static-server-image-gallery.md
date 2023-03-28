@@ -35,7 +35,7 @@ Next add a 'start' script and put it to start the **server.js** file in the **pa
 
 \*Note I always add a 'dev' script to run it with [nodemon](https://www.npmjs.com/package/nodemon) for hot-reloading. In case you do not know, what nodemon is, it's a cool dependency that enables your project to 'auto-restart' the server whenever you change something in the code.
 
-You can read more about it in [this](https://www.code-pill.com/articles/node-js-mini-projects-logger) article.
+You can read more about it in [this](/posts/node-static-server-image-gallery) article.
 
 Next, create the actual **server.js** file and paste the below code to it:
 

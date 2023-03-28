@@ -362,6 +362,6 @@ Now our **logger.js** module is fully operational and does the pointless thing o
 
 As a little 'challenge' try making the logfile something like **date_log.txt**.
 
-The full logger.js module now looks like [this](https://www.code-pill.com/articles/node-js-mini-projects-logger). Also [Here's](https://github.com/StanciuDragosIoan/demo-repo-node-mini-projects) the repo with the full code.
+The full logger.js module now looks like [this](https://github.com/StanciuDragosIoan/demo-repo-node-mini-project/blob/master/custom_modules/logger.js). Also [Here's](https://github.com/StanciuDragosIoan/demo-repo-node-mini-project) the repo with the full code.
 
 \*Note there is a [.gitignore](https://git-scm.com/docs/gitignore) file in the repo, which has **node_modules** written in it. This means that [git](https://git-scm.com/) will not track (add to commits) the **node_modules** directory and that's good. We do not want that because the node_modules directory is very big, and it can be instantly re-created by running **npm install** (the first command you will run in any nodeJS project). Also, note that if you do not run npm install, the project will obviously not work.
