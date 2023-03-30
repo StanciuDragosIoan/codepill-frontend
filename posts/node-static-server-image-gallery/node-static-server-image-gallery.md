@@ -2,7 +2,7 @@
 title: "Node Static Server - Image Gallery Project"
 date: "2021-06-01"
 image: static.png
-excerpt: NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.
+excerpt: As you know or might not know.. Node is very good at serving dynamic data. So on our servers we can have complex logic that manipulates data, and 'serves' it dynamically based on that data.
 isFeatured: true
 ---
 

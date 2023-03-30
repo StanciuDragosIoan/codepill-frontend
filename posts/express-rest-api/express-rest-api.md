@@ -76,7 +76,7 @@ app.use((req, res) => {
 });
 ```
 
-**app.use()** is a generic method, that responds to all http methods. So it will answer to **POST**, **PUT**, **DELETE** etc... just as if we had written: **app.get()**, **app.post()**, **app.put()**, etc... each with the same logic of checking the request type and aswering appropriately. Instead of that, [express](https://expressjs.com/) gives us the hand use() method and we can create this 'generic middleware'.
+**app.use()** is a generic method, that responds to all http methods. So it will answer to **POST**, **PUT**, **DELETE** etc... just as if we had written: **app.get()**, **app.post()**, **app.put()**, etc... each with the same logic of checking the request type and aswering appropriately. Instead of that, [express](https://expressjs.com/) gives us the handy use() method and we can create this 'generic middleware'.
 
 When working with [express](https://expressjs.com/) you will often encounter this concept of middleware. A [middleware](https://expressjs.com/en/guide/using-middleware.html#using-middleware), is a function that has access to the request-response lifecycle, and it can be used to further configure the server response or the behaviour of our application. So we can execute a middleware before sending the client response (for instance we can use such a function to check if the user is authenticated to our application or not, or even to authenticate him). Furthermore, we can configure the middleware so that it ends the server response by itself, if needed.
 
@@ -120,6 +120,8 @@ We will first create some data for our API to read and serve. Create a 'data' di
   { name: "Misaka", color: "Red", id: "32b656a52375984776851a0085792a" },
 ];
 ```
+
+\* Remember to format the contents as [.JSON](https://www.json.org/json-en.html)
 
 Next, create a 'routes' directory, and inside of it create a **resources.js** file. Inside of it, paste the below:
 
@@ -396,7 +398,7 @@ Now, if we run the below command again:
 
 We will get a [400 badRequest](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) response for a 'duplicate entry'. Note how we also validate that the payload is good, it has a certain type and maximum length, or if it's missing some field or is bad in any other way. This is a way more robust approach. Feel free to test some more using a tool such as [Postman](https://www.postman.com/) by making POST requests to [http://localhost:3000/resources](http://localhost:3000/resources) with various payloads.
 
-Now that our create works, let's add an update endpoint. And actualyl we will add 2 of them. We want users to be able to update a resource with both a [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) and a [PUT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT) request.
+Now that our create works, let's add an update endpoint. And actually we will add 2 of them. We want users to be able to update a resource with both a [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) and a [PUT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT) request.
 
 Add the [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) endpoint in the **routes/resources.js** right under the first [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) call:
 
