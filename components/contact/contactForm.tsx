@@ -16,7 +16,7 @@ async function sendData(contactDetails: {
     },
   });
 
-  const data = await res.json();
+  await res.json();
 
   if (!res.ok) {
     throw new Error("something went wrong");
@@ -29,21 +29,31 @@ function ContactForm() {
   const [enteredEmail, setEmail] = useState("");
   const [enteredName, setName] = useState("");
   const [enteredMessage, setMessage] = useState("");
+  const [error, setError] = useState("");
   const [requestStatus, setRequestStatus] = useState(); //pending/success/failure
 
   async function sendMessage(event: React.MouseEvent<HTMLButtonElement>) {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const isValidEmail = emailRegex.test(enteredEmail);
     event.preventDefault();
+    if (isValidEmail && enteredEmail && enteredName && enteredMessage) {
+      try {
+        await sendData({
+          email: enteredEmail,
+          name: enteredName,
+          message: enteredMessage,
+        });
+        setEmail("");
+        setMessage("");
+        setName("");
+      } catch (err) {}
+    } else {
+      setError("Please check your inputs and try again!");
 
-    try {
-      await sendData({
-        email: enteredEmail,
-        name: enteredName,
-        message: enteredMessage,
-      });
-      setEmail("");
-      setMessage("");
-      setName("");
-    } catch (err) {}
+      setTimeout(() => {
+        setError("");
+      }, 2000);
+    }
   }
 
   return (
@@ -56,6 +66,7 @@ function ContactForm() {
         <h1>How can I help you?</h1>
 
         <form className={classes.form}>
+          <p className="text-red-400 text-center">{error}</p>
           <div className={classes.controls}>
             <div className={classes.control}>
               <label htmlFor="email">Your email</label>
@@ -98,8 +109,8 @@ function ContactForm() {
 
       <Image
         className={classes.img}
-        src="/assets/img/contact.png"
-        alt="an imave showing Max"
+        src="/assets/img/mail.svg"
+        alt="contact us"
         width={600}
         height={300}
       />

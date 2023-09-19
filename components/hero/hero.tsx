@@ -10,20 +10,29 @@ function Hero() {
     <section
       className={theme === "dark" ? classes.heroDark : classes.heroLight}
     >
-      <div className={classes.image}>
-        <Image
-          src="/assets/img/code.jpg"
-          alt="an imave showing Max"
-          width={300}
-          height={300}
-        />
+      <h1 className={classes.heroHeader}>Welcome to CodePill!</h1>
+      <div className={classes.flex}>
+        <div className={classes.flexChild}>
+          <p className={`${classes.heroText} ${classes.lg}`}>
+            Where awesome codeSnippets build amazing projects!
+          </p>
+          <p className={classes.heroText}>
+            Unlock the secrets of web development technologies and embark on
+            your journey to create remarkable projects, whether they&apos; re
+            small and impactful or large-scale innovations. Start your coding
+            adventure today!
+          </p>
+        </div>
+        <div className={classes.flexChild}>
+          <Image
+            className={classes.image}
+            src="/assets/img/background-app.jpeg"
+            alt="an image showing an app being built"
+            width={500}
+            height={500}
+          />
+        </div>
       </div>
-      <h1>Hi, I&apos;m Dragos</h1>
-      <p>
-        I am a full-stack and mobile developer that blogs about web and mobile
-        technolgies!
-      </p>
-      <p>Have a look around and see if you like anything!</p>
     </section>
   );
 }
