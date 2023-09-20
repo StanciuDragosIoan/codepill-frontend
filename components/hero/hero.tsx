@@ -2,6 +2,7 @@ import { UserContext } from "@/context/user";
 import Image from "next/image";
 import { useContext } from "react";
 import classes from "./hero.module.css";
+import { VideoComponent } from "../utils/VideoComponent";
 
 function Hero() {
   const { theme } = useContext(UserContext);
@@ -24,13 +25,7 @@ function Hero() {
           </p>
         </div>
         <div className={classes.flexChild}>
-          <Image
-            className={classes.image}
-            src="/assets/img/background-app.jpeg"
-            alt="an image showing an app being built"
-            width={500}
-            height={500}
-          />
+          <VideoComponent />
         </div>
       </div>
     </section>

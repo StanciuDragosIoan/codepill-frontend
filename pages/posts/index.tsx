@@ -5,7 +5,6 @@ import globalClasses from "@/styles/shared.module.css";
 function PostsPage(props: Props) {
   return (
     <>
-      <h1 className={globalClasses.white}>PostsPagePage</h1>
       <AllPosts posts={props.posts} />
     </>
   );
