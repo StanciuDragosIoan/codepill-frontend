@@ -27,8 +27,9 @@
   border-radius: 15%;
   z-index: 1;
   position: absolute;
-  top: 4%;
-  left: 90%;
+  top: 0.3%;
+  left: 95%;
+  /* padding: 10px; */
 }
 
 .copyBtn:focus {
