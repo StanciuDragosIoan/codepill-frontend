@@ -33,3 +33,29 @@
 .white {
   color: #fff !important;
 }
+
+.card {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 1s;
+  transform: scale(1.01);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date {
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  margin-top: -5px;
+}

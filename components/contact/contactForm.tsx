@@ -69,7 +69,7 @@ function ContactForm() {
           <p className="text-red-400 text-center">{error}</p>
           <div className={classes.controls}>
             <div className={classes.control}>
-              <label htmlFor="email">Your email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -91,7 +91,7 @@ function ContactForm() {
             </div>
           </div>
           <div className={classes.control}>
-            <label htmlFor="message">Your message</label>
+            <label htmlFor="message">Message</label>
             <textarea
               id="message"
               rows={5}

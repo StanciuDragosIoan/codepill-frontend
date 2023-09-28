@@ -1,16 +1,15 @@
 import { UserContext } from "@/context/user";
-import Image from "next/image";
 import { useContext } from "react";
 import classes from "./hero.module.css";
 import { VideoComponent } from "../utils/VideoComponent";
-
+import globalClasses from "@/styles/shared.module.css";
+const { heroDark, heroLight } = classes;
+const { card } = globalClasses;
 function Hero() {
   const { theme } = useContext(UserContext);
 
   return (
-    <section
-      className={theme === "dark" ? classes.heroDark : classes.heroLight}
-    >
+    <section className={`${card} ${theme === "dark" ? heroDark : heroLight}`}>
       <h1 className={classes.heroHeader}>Welcome to CodePill!</h1>
       <div className={classes.flex}>
         <div className={classes.flexChild}>

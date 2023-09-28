@@ -28,11 +28,23 @@ body {
   --color-primary-600: #480264;
   --color-primary-700: #3d0264;
 
+  --color-blueish-50: #c8d7e5;
+  --color-blueish-100: #a0b5cc;
+  --color-blueish-200: #889ebb;
+  --color-blueish-300: #7e8eab;
+  --color-blueish-400: #6e79a1;
+  --color-blueish-500: #5a097a;
+  --color-blueish-600: #484164;
+  --color-blueish-700: #3d0264;
+
   --color-success-100: #a2f0bc;
   --color-success-500: #12bd4b;
 
   --color-error-100: #f1acc9;
   --color-error-500: #a10c4a;
+
+  --color-submit-btn: #082136;
+  --color-submit-btn-light: #1d3f5b;
 
   --size-1: 0.25rem;
   --size-2: 0.5rem;

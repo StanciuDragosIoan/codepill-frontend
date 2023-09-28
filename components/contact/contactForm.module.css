@@ -37,7 +37,6 @@
   padding: var(--size-1);
   border-radius: 4px;
   width: 100%;
-  border: 1px solid var(--color-grey-400);
   background-color: var(--color-grey-50);
   resize: none;
   color: #000;
@@ -54,6 +53,10 @@
   min-width: 10rem;
 }
 
+.control input {
+  outline: none;
+}
+
 .actions {
   margin-top: var(--size-4);
   text-align: right;
@@ -62,17 +65,22 @@
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: var(--color-primary-700);
-  border: 1px solid var(--color-primary-700);
+  background-color: var(--color-submit-btn);
   padding: var(--size-2) var(--size-4);
   border-radius: 4px;
   color: var(--color-primary-50);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
+.form textarea,
+.from input {
+  outline: none;
+}
+
 .form button:hover {
-  background-color: var(--color-primary-500);
+  background-color: var(--color-submit-btn-light);
   border-color: var(--color-primary-500);
+  transition: 1s;
 }
 
 .img {
@@ -81,6 +89,7 @@
   width: 100% !important;
   position: relative !important;
   height: unset !important;
+  border: none !important;
 }
 
 @media (min-width: 768px) {

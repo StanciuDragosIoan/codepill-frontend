@@ -27,10 +27,10 @@ function PostItem(props: Props) {
           theme === "dark"
             ? globalClasses.contentDark
             : globalClasses.contentLight
-        }`}
+        } ${globalClasses.card}`}
       >
         <Link href={linkPath} target="_blank">
-          <div className={classes.image}>
+          <div className={`${classes.image}`}>
             <Image
               src={imagePath}
               alt={title}

@@ -33,8 +33,14 @@ function Layout({ children }: Props) {
           theme === "dark" ? globalClasses.navDarkBg : globalClasses.navLightBg
         }`}
       >
-        <Link href="/">
-          <Logo />
+        <Link href="/" className={globalClasses.flex}>
+          <span
+            style={{ fontSize: "2rem", margin: "auto 2px", marginTop: "-2px" }}
+          >
+            &copy;
+          </span>
+          <Logo />{" "}
+          <p className={globalClasses.date}>{new Date().getFullYear()}</p>
         </Link>
       </footer>
     </div>
