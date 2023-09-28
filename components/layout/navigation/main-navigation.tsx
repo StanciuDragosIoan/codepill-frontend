@@ -2,7 +2,7 @@ import Link from "next/link";
 import classes from "./main-navigation.module.css";
 import globalClasses from "@/styles/shared.module.css";
 import Logo from "../logo/logo";
-import { useContext, useEffect, useState, useMemo } from "react";
+import { useContext, useState, useMemo } from "react";
 import { UserContext } from "@/context/user";
 import Image from "next/image";
 function MainNavigation() {
@@ -66,21 +66,24 @@ function MainNavigation() {
           </ul>
         </nav>
       </header>
-      {isShow && (
-        <div className={classes.placeholder} key={Math.random()}>
-          <Image
-            src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
-            alt={theme === "dark" ? "dark_mode_picture" : "light_mode_picture"}
-            width={150}
-            height={150}
-            priority={true}
-            onDoubleClick={() => setShow(false)}
-          />
-          <span className={classes.tooltip}>
-            Double Click to make me go away (｡•́︿•̀｡)
-          </span>
-        </div>
-      )}
+
+      <div
+        className={classes.placeholder}
+        key={Math.random()}
+        style={{ opacity: Number(isShow) }}
+      >
+        <Image
+          src={theme === "dark" ? darkPlaceholder : lightPlaceholder}
+          alt={theme === "dark" ? "dark_mode_picture" : "light_mode_picture"}
+          width={150}
+          height={150}
+          priority={true}
+          onDoubleClick={() => setShow(false)}
+        />
+        <span className={classes.tooltip}>
+          Double Click to make me go away (｡•́︿•̀｡)
+        </span>
+      </div>
     </>
   );
 }

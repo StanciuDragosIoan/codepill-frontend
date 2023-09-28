@@ -31,7 +31,7 @@ export function getServerSideProps(ctx: any) {
   return {
     props: {
       post: postData,
-      theme: codePillTheme || "light",
+      theme: codePillTheme || "dark",
     },
   };
 }

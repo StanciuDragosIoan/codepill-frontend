@@ -17,7 +17,7 @@ type Props = {
 
 export const UserContextProvider = (props: Props) => {
   const { children, themeProp } = props;
-  const [theme, setTheme] = useState(themeProp ? themeProp : "light");
+  const [theme, setTheme] = useState(themeProp ? themeProp : "dark");
 
   return (
     <UserContext.Provider

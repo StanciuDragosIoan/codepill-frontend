@@ -113,6 +113,7 @@ function ContactForm() {
         alt="contact us"
         width={600}
         height={300}
+        priority
       />
     </section>
   );

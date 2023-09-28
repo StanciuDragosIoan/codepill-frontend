@@ -1,7 +1,6 @@
 import { Props } from "@/components/layout/layout";
 import AllPosts from "@/components/posts/allPosts/allPosts";
 import { getAllPosts } from "@/lib/posts-utils";
-import globalClasses from "@/styles/shared.module.css";
 function PostsPage(props: Props) {
   return (
     <>
@@ -17,7 +16,7 @@ export function getServerSideProps(ctx: any) {
   return {
     props: {
       posts: allPosts,
-      theme: codePillTheme || "light",
+      theme: codePillTheme || "dark",
     },
   };
 }

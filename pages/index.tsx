@@ -20,7 +20,7 @@ export function getServerSideProps(ctx: any) {
   return {
     props: {
       posts: featuredPosts,
-      theme: codePillTheme || "light",
+      theme: codePillTheme || "dark",
     },
   };
 }

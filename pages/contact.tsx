@@ -12,7 +12,7 @@ export function getServerSideProps(ctx: any) {
 
   return {
     props: {
-      theme: codePillTheme || "light",
+      theme: codePillTheme || "dark",
     },
   };
 }
