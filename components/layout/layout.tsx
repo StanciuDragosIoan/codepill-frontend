@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { UserContext } from "@/context/user";
 import { Post } from "@/domain/posts/types/posts.types";
 import Link from "next/link";
-import Logo from "./logo/logo";
 
 export type Props = {
   children?: string | JSX.Element | JSX.Element[];
@@ -26,7 +25,7 @@ function Layout({ children }: Props) {
     >
       <MainNavigation />
       <div className={classes.container}>
-        <main>{children}</main>{" "}
+        <main>{children}</main>
       </div>
       <footer
         className={`${classes.footer} ${
@@ -39,7 +38,7 @@ function Layout({ children }: Props) {
           >
             &copy;
           </span>
-          <Logo />{" "}
+          <span className="text-2xl">CodePill</span>
           <p className={globalClasses.date}>{new Date().getFullYear()}</p>
         </Link>
       </footer>
