@@ -20,6 +20,10 @@
 }
 
 .image img {
+  height: 13rem;
+}
+
+.image img {
   object-fit: cover;
 }
 
