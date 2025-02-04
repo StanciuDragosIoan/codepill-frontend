@@ -57,20 +57,17 @@ export async function sendAnalyticsEvent(eventName: string) {
     const locale = typeof navigator !== "undefined" ? navigator.language : "unknown";
     const country = inferCountryFromLocale(locale);
     const userId = getUserId(locale, country);
-
+    const pathName = typeof window !== "undefined" ? window.location.pathname : "unknown", // Capture relative path
     const response = await fetch("https://analytics-engine-nine.vercel.app/api/collect", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         event: eventName,
         timestamp: new Date().toISOString(),
-        user_id: userId,
+        user_id: `${userId}_${locale}_${country}`,
         metadata: {
-          source: "CodePill",
+          source: `CodePill_${pathName}`,
           device: getDeviceType(),
-          path: typeof window !== "undefined" ? window.location.pathname : "unknown", // Capture relative path
-          locale,
-          country, // Attach inferred country
         },
       }),
     });
