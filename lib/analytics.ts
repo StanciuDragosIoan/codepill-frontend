@@ -46,7 +46,9 @@ export async function sendAnalyticsEvent(eventName: string) {
     if (typeof window !== "undefined") {
       const hasSentEvent = sessionStorage.getItem("analyticsEventSent");
       if (hasSentEvent) {
-        console.log("Analytics event already sent in this session. Skipping...");
+        console.log(
+          "Analytics event already sent in this session. Skipping..."
+        );
         return;
       }
       sessionStorage.setItem("analyticsEventSent", "true");
@@ -54,30 +56,36 @@ export async function sendAnalyticsEvent(eventName: string) {
 
     console.log("Sending analytics event...");
 
-    const locale = typeof navigator !== "undefined" ? navigator.language : "unknown";
+    const locale =
+      typeof navigator !== "undefined" ? navigator.language : "unknown";
     const country = inferCountryFromLocale(locale);
     const userId = getUserId(locale, country);
-
-    const response = await fetch("https://analytics-engine-nine.vercel.app/api/collect", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        event: eventName,
-        timestamp: new Date().toISOString(),
-        user_id: userId,
-        metadata: {
-          source: "CodePill",
-          device: getDeviceType(),
-          path: typeof window !== "undefined" ? window.location.pathname : "unknown", // Capture relative path
-          locale,
-          country, // Attach inferred country
-        },
-      }),
-    });
+    const pathName =
+      typeof window !== "undefined" ? window.location.pathname : "unknown"; // Capture relative path
+    const response = await fetch(
+      "https://analytics-engine-nine.vercel.app/api/collect",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          event: eventName,
+          timestamp: new Date().toISOString(),
+          user_id: `${userId}_${locale}_${country}`,
+          metadata: {
+            source: `CodePill_${pathName}`,
+            device: getDeviceType(),
+          },
+        }),
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text(); // Get error response body
-      console.error("Failed to send analytics event:", response.status, errorText);
+      console.error(
+        "Failed to send analytics event:",
+        response.status,
+        errorText
+      );
       return;
     }
 
@@ -92,7 +100,9 @@ function getUserId(locale: string, country: string) {
   if (typeof window !== "undefined") {
     let userId = localStorage.getItem("analyticsUserId");
     if (!userId) {
-      userId = `guest_${Math.random().toString(36).substring(2, 15)}_${country}_${locale}`;
+      userId = `guest_${Math.random()
+        .toString(36)
+        .substring(2, 15)}_${country}_${locale}`;
       localStorage.setItem("analyticsUserId", userId);
     }
     return userId;
@@ -113,4 +123,3 @@ function inferCountryFromLocale(locale: string): string {
   if (!locale.includes("-")) return "unknown";
   return locale.split("-")[1].toUpperCase(); // Extract country code
 }
-
