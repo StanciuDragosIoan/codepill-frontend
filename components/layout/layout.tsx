@@ -19,11 +19,15 @@ function Layout({ children }: Props) {
   const { theme } = useContext(UserContext);
 
   useEffect(() => {
-    sendAnalyticsEvent("page_view");
+    // sendAnalyticsEvent("page_view");
   }, []);
 
   return (
-    <div className={theme === "dark" ? globalClasses.darkBg : globalClasses.lightBg}>
+    <div
+      className={
+        theme === "dark" ? globalClasses.darkBg : globalClasses.lightBg
+      }
+    >
       <MainNavigation />
       <div className={classes.container}>
         <main>{children}</main>
@@ -34,7 +38,9 @@ function Layout({ children }: Props) {
         }`}
       >
         <Link href="/" className={globalClasses.flex}>
-          <span style={{ fontSize: "2rem", margin: "auto 2px", marginTop: "-2px" }}>
+          <span
+            style={{ fontSize: "2rem", margin: "auto 2px", marginTop: "-2px" }}
+          >
             &copy;
           </span>
           <span className="text-2xl">CodePill</span>
