@@ -64,7 +64,7 @@ const PostContent = ({ post }: { post: Post }) => {
       const snippet = children[0];
       return (
         <div className={classes.relative}>
-          <button onClick={copySnippet} className={classes.copyBtn}>
+          <button onClick={copySnippet} className={classes.copyBtn} aria-label="Copy code snippet">
             <i className="fa-solid fa-copy"></i>
           </button>
           <SyntaxHighlighter style={getEditorStyle()} language={language}>

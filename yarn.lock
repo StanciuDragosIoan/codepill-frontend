@@ -13,9 +13,9 @@
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
 "@babel/runtime@^7.23.2", "@babel/runtime@^7.3.1":
-  version "7.23.2"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.23.2.tgz"
-  integrity sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==
+  version "7.27.0"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/@babel/runtime/-/runtime-7.27.0.tgz"
+  integrity sha1-++58+XxwlRjswfWQmESB1UYNR2I=
   dependencies:
     regenerator-runtime "^0.14.0"
 
@@ -239,10 +239,10 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.10.tgz"
   integrity sha512-mxSnDQxPqsZxmeShFH+uwQ4kO4gcJcGahjjMFeLbKE95IAZiiZyiEepGZjtXJ7hN/yfu0bu9xN2ajcU0JcxX6A==
 
-"@types/react-dom@18.0.10":
+"@types/react-dom@^18.0.10":
   version "18.0.10"
-  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.10.tgz"
-  integrity sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/@types/react-dom/-/react-dom-18.0.10.tgz"
+  integrity sha1-O2bexWqg8Wpswm2p6cqWw1wLQ1I=
   dependencies:
     "@types/react" "*"
 
@@ -253,10 +253,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16", "@types/react@18.0.27":
+"@types/react@*", "@types/react@^18.0.27", "@types/react@>=16":
   version "18.0.27"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.0.27.tgz"
-  integrity sha512-3vtRKHgVxu3Jp9t718R9BuzoD4NcQ8YJ5XRzsSKxNDiDonD2MXIT1TmSkenxuCycZJoQT5d2vE8LwWJxBC1gmA==
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/@types/react/-/react-18.0.27.tgz"
+  integrity sha1-2UJavhh6APil7BgrAQ1P2dpwO3E=
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -590,12 +590,12 @@ brace-expansion@^2.0.1:
   dependencies:
     balanced-match "^1.0.0"
 
-braces@^3.0.2, braces@~3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz"
-  integrity sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==
+braces@^3.0.3, braces@~3.0.2:
+  version "3.0.3"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/braces/-/braces-3.0.3.tgz"
+  integrity sha1-SQMy9AkZRSJy1VqEgK3AxEE1h4k=
   dependencies:
-    fill-range "^7.0.1"
+    fill-range "^7.1.1"
 
 browserslist@^4.21.10, "browserslist@>= 4.21.0":
   version "4.22.1"
@@ -1242,10 +1242,10 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-fill-range@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz"
-  integrity sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==
+fill-range@^7.1.1:
+  version "7.1.1"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/fill-range/-/fill-range-7.1.1.tgz"
+  integrity sha1-RCZdPKwH4+p9wkdRY4BkN1SgUpI=
   dependencies:
     to-regex-range "^5.0.1"
 
@@ -1520,6 +1520,11 @@ highlight.js@^10.4.1, highlight.js@~10.7.0:
   resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
   integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
 
+highlightjs-vue@^1.0.0:
+  version "1.0.0"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/highlightjs-vue/-/highlightjs-vue-1.0.0.tgz"
+  integrity sha1-/f6X++pjVOcO5E46lVh14RTbCG0=
+
 ignore@^5.2.0, ignore@^5.3.1:
   version "5.3.2"
   resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/ignore/-/ignore-5.3.2.tgz"
@@ -1565,10 +1570,13 @@ internal-slot@^1.0.5:
     hasown "^2.0.0"
     side-channel "^1.0.4"
 
-ip@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/ip/-/ip-2.0.0.tgz"
-  integrity sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==
+ip-address@^9.0.5:
+  version "9.0.5"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/ip-address/-/ip-address-9.0.5.tgz"
+  integrity sha1-EXqWCBmwh4DDvR8U7zwcwdPz6lo=
+  dependencies:
+    jsbn "1.1.0"
+    sprintf-js "^1.1.3"
 
 is-alphabetical@^1.0.0:
   version "1.0.4"
@@ -1710,8 +1718,8 @@ is-number-object@^1.0.4:
 
 is-number@^7.0.0:
   version "7.0.0"
-  resolved "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz"
-  integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/is-number/-/is-number-7.0.0.tgz"
+  integrity sha1-dTU0W4lnNNX4DE0GxQlVUnoU8Ss=
 
 is-path-inside@^3.0.3:
   version "3.0.3"
@@ -1843,6 +1851,11 @@ js-yaml@^4.1.0:
   integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
   dependencies:
     argparse "^2.0.1"
+
+jsbn@1.1.0:
+  version "1.1.0"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/jsbn/-/jsbn-1.1.0.tgz"
+  integrity sha1-sBMHyym2GKHtJux56RH4A8TaAEA=
 
 json-buffer@3.0.1:
   version "3.0.1"
@@ -2208,11 +2221,11 @@ micromark@^3.0.0:
     uvu "^0.5.0"
 
 micromatch@^4.0.4, micromatch@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.npmjs.org/micromatch/-/micromatch-4.0.5.tgz"
-  integrity sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==
+  version "4.0.8"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/micromatch/-/micromatch-4.0.8.tgz"
+  integrity sha1-1m+hjzpHB2eJMgubGvMr2G2fogI=
   dependencies:
-    braces "^3.0.2"
+    braces "^3.0.3"
     picomatch "^2.3.1"
 
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.2:
@@ -2285,9 +2298,9 @@ mz@^2.7.0:
     thenify-all "^1.0.0"
 
 nanoid@^3.3.6:
-  version "3.3.7"
-  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.7.tgz"
-  integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
+  version "3.3.11"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/nanoid/-/nanoid-3.3.11.tgz"
+  integrity sha1-T08RLO++MDIC8hmYOBKJNiZtGFs=
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -2566,14 +2579,14 @@ prelude-ls@^1.2.1:
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
 prismjs@^1.27.0:
-  version "1.29.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.29.0.tgz"
-  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
+  version "1.30.0"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/prismjs/-/prismjs-1.30.0.tgz"
+  integrity sha1-2XCZadnU4WQD9vNIxjVTsZ8Jdak=
 
 prismjs@~1.27.0:
   version "1.27.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.27.0.tgz"
-  integrity sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/prismjs/-/prismjs-1.27.0.tgz"
+  integrity sha1-u27jE4oLQ4o2U91NbODMZRCkUFc=
 
 prop-types@^15.0.0, prop-types@^15.8.1:
   version "15.8.1"
@@ -2646,12 +2659,13 @@ react-markdown@^8.0.5:
     vfile "^5.0.0"
 
 react-syntax-highlighter@^15.5.0:
-  version "15.5.0"
-  resolved "https://registry.npmjs.org/react-syntax-highlighter/-/react-syntax-highlighter-15.5.0.tgz"
-  integrity sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==
+  version "15.6.1"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/react-syntax-highlighter/-/react-syntax-highlighter-15.6.1.tgz"
+  integrity sha1-+lZ8sKn5a+e7zPLBOjxLVlfZVD4=
   dependencies:
     "@babel/runtime" "^7.3.1"
     highlight.js "^10.4.1"
+    highlightjs-vue "^1.0.0"
     lowlight "^1.17.0"
     prismjs "^1.27.0"
     refractor "^3.6.0"
@@ -2691,8 +2705,8 @@ reflect.getprototypeof@^1.0.4:
 
 refractor@^3.6.0:
   version "3.6.0"
-  resolved "https://registry.npmjs.org/refractor/-/refractor-3.6.0.tgz"
-  integrity sha512-MY9W41IOWxxk31o+YvFCNyNzdkc9M20NoZK5vq6jkv4I/uh2zkWcfudj0Q1fovjUQJrNewS9NMzeTtqPf+n5EA==
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/refractor/-/refractor-3.6.0.tgz"
+  integrity sha1-rDGPWgcV6teQ/PsMcfTdg9l3k1o=
   dependencies:
     hastscript "^6.0.0"
     parse-entities "^2.0.0"
@@ -2885,11 +2899,11 @@ smart-buffer@^4.2.0:
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
 socks@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.npmjs.org/socks/-/socks-2.7.1.tgz"
-  integrity sha512-7maUZy1N7uo6+WVEX6psASxtNlKaNVMlGQKkG/63nEDdLOWNbiUMoLK7X4uYoLhQstau72mLgfEWcXcwsaHbYQ==
+  version "2.8.4"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/socks/-/socks-2.8.4.tgz"
+  integrity sha1-BxCXVc3U2gMmm9pHJbqgYatW1cw=
   dependencies:
-    ip "^2.0.0"
+    ip-address "^9.0.5"
     smart-buffer "^4.2.0"
 
 source-map-js@^1.0.2:
@@ -2913,6 +2927,11 @@ sparse-bitfield@^3.0.3:
   integrity sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ==
   dependencies:
     memory-pager "^1.0.2"
+
+sprintf-js@^1.1.3:
+  version "1.1.3"
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/sprintf-js/-/sprintf-js-1.1.3.tgz"
+  integrity sha1-SRS5A6L4toXRf994pw6RfocuREo=
 
 sprintf-js@~1.0.2:
   version "1.0.3"
@@ -3127,8 +3146,8 @@ third-party-capital@1.0.20:
 
 to-regex-range@^5.0.1:
   version "5.0.1"
-  resolved "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz"
-  integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
+  resolved "https://pkgs.dev.azure.com/ucbalm/a8dc7802-73f8-4d8e-adc3-e4580a3dc3c0/_packaging/NextgenWeb/npm/registry/to-regex-range/-/to-regex-range-5.0.1.tgz"
+  integrity sha1-FkjESq58jZiKMmAY7XL1tN0DkuQ=
   dependencies:
     is-number "^7.0.0"
 
