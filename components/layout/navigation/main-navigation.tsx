@@ -5,6 +5,22 @@ import Logo from "../logo/logo";
 import { useContext, useState, useMemo } from "react";
 import { UserContext } from "@/context/user";
 import Image from "next/image";
+
+const handleBuyMeClick = async () => {
+  try {
+    console.log("Buy me coffee clicked!");
+    const res = await fetch("/api/create-checkout-session", { method: "POST" });
+    if (!res.ok) throw new Error("Failed to create checkout session");
+    const data = await res.json();
+    if (!data.session?.url && !data.url) throw new Error("No session URL returned");
+    window.location.href = data.session?.url || data.url;
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
+
 function MainNavigation() {
   const { theme, setTheme } = useContext(UserContext);
   const [isShow, setShow] = useState(true);
@@ -33,9 +49,8 @@ function MainNavigation() {
   return (
     <>
       <header
-        className={`${classes.header} ${
-          theme === "dark" ? globalClasses.navDarkBg : globalClasses.navLightBg
-        }`}
+        className={`${classes.header} ${theme === "dark" ? globalClasses.navDarkBg : globalClasses.navLightBg
+          }`}
       >
         <Link href="/">
           <Logo />
@@ -43,6 +58,14 @@ function MainNavigation() {
 
         <nav>
           <ul>
+            <li>
+              <button
+                onClick={handleBuyMeClick}
+                className="px-4 py-2 text-white"
+              >
+                Buy me ☕
+              </button>
+            </li>
             <li>
               <Link href="/posts">Posts</Link>
             </li>
