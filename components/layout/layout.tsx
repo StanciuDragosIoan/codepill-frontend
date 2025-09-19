@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, type JSX } from "react";
 import { sendAnalyticsEvent } from "@/lib/analytics";
 import MainNavigation from "./navigation/main-navigation";
 import classes from "./layout.module.css";

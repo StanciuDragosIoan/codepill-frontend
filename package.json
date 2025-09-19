@@ -3,24 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@next/third-parties": "^14.0.2",
+    "@next/third-parties": "15.5.3",
     "@ts-stack/markdown": "^1.4.0",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
     "eslint": "8.33.0",
     "gray-matter": "^4.0.3",
     "micro": "^10.0.1",
     "mongodb": "^5.0.1",
-    "next": "^14.2.28",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "15.5.3",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "react-markdown": "^8.0.5",
     "react-syntax-highlighter": "^15.5.0",
     "stripe": "^18.5.0",
@@ -30,8 +30,12 @@
     "@types/node": "^22.x",
     "@types/react-syntax-highlighter": "^15.5.6",
     "autoprefixer": "^10.4.15",
-    "eslint-config-next": "^14.2.28",
+    "eslint-config-next": "15.5.3",
     "postcss": "^8.4.30",
     "tailwindcss": "^3.3.3"
+  },
+  "overrides": {
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9"
   }
 }

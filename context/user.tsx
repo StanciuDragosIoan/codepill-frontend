@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, type JSX } from "react";
 
 interface UserContextType {
   theme: String;
