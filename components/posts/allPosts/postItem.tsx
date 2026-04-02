@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import classes from "./postItem.module.css";
 import Image from "next/image";

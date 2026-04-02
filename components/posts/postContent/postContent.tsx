@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -24,8 +26,7 @@ const PostContent = ({ post }: { post: Post }) => {
   };
 
   const customRenderer: any = {
-    p: (paragraph: { children?: boolean; node?: any }) => {
-      const { node } = paragraph;
+    p: ({ node, children }: any) => {
       if (node.children[0].tagName === "img") {
         const image = node.children[0];
         const width = 600;
@@ -53,15 +54,15 @@ const PostContent = ({ post }: { post: Post }) => {
                 : globalClasses.contentLight
             }
           >
-            {paragraph.children}
+            {children}
           </p>
         );
       }
     },
-    code: (code: { children: Array<string>; node?: any; language: string }) => {
-      const { language, children } = code;
-
-      const snippet = children[0];
+    code: ({ className, children }: any) => {
+      const match = /language-(\w+)/.exec(className || "");
+      const language = match ? match[1] : "";
+      const snippet = String(children).replace(/\n$/, "");
       return (
         <div className={classes.relative}>
           <button onClick={copySnippet} className={classes.copyBtn} aria-label="Copy code snippet">
@@ -73,6 +74,11 @@ const PostContent = ({ post }: { post: Post }) => {
         </div>
       );
     },
+    a: ({ href, children }: any) => (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    ),
   };
   return (
     <article
@@ -83,15 +89,7 @@ const PostContent = ({ post }: { post: Post }) => {
       }`}
     >
       <PostHeader title={post.title} image={imagePath} />
-      <ReactMarkdown
-        className={
-          theme === "dark"
-            ? globalClasses.contentDark
-            : globalClasses.contentLight
-        }
-        components={customRenderer}
-        linkTarget="_blank"
-      >
+      <ReactMarkdown components={customRenderer}>
         {post.content}
       </ReactMarkdown>
     </article>

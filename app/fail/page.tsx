@@ -1,3 +1,5 @@
+"use client";
+
 import { handleBuyMeClick } from "@/components/layout/navigation/main-navigation";
 
 export default function Fail() {
@@ -7,7 +9,8 @@ export default function Fail() {
         😢 Oops! Payment failed
       </h1>
       <p className="text-gray-300 text-center mb-6">
-        Something went wrong with your transaction. Don&apos;t worry, you can try again!
+        Something went wrong with your transaction. Don&apos;t worry, you can
+        try again!
       </p>
       <button
         onClick={handleBuyMeClick}

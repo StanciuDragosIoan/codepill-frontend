@@ -1,4 +1,6 @@
-import { useEffect, useContext } from "react";
+"use client";
+
+import { useEffect, useContext, type JSX } from "react";
 import { sendAnalyticsEvent } from "@/lib/analytics";
 import MainNavigation from "./navigation/main-navigation";
 import classes from "./layout.module.css";
@@ -8,7 +10,7 @@ import { Post } from "@/domain/posts/types/posts.types";
 import Link from "next/link";
 
 export type Props = {
-  children?: string | JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   posts?: Post[];
   post?: Post;
   title?: string;
