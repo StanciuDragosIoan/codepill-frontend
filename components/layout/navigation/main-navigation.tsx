@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import classes from "./main-navigation.module.css";
 import globalClasses from "@/styles/shared.module.css";
@@ -8,18 +10,17 @@ import Image from "next/image";
 
 export const handleBuyMeClick = async () => {
   try {
-    console.log("Buy me coffee clicked!");
     const res = await fetch("/api/create-checkout-session", { method: "POST" });
     if (!res.ok) throw new Error("Failed to create checkout session");
     const data = await res.json();
-    if (!data.session?.url && !data.url) throw new Error("No session URL returned");
+    if (!data.session?.url && !data.url)
+      throw new Error("No session URL returned");
     window.location.href = data.session?.url || data.url;
   } catch (err) {
     console.error(err);
     alert("Something went wrong. Please try again.");
   }
 };
-
 
 function MainNavigation() {
   const { theme, setTheme } = useContext(UserContext);
@@ -49,8 +50,9 @@ function MainNavigation() {
   return (
     <>
       <header
-        className={`${classes.header} ${theme === "dark" ? globalClasses.navDarkBg : globalClasses.navLightBg
-          }`}
+        className={`${classes.header} ${
+          theme === "dark" ? globalClasses.navDarkBg : globalClasses.navLightBg
+        }`}
       >
         <Link href="/">
           <Logo />
@@ -63,7 +65,7 @@ function MainNavigation() {
                 onClick={handleBuyMeClick}
                 className="px-4 py-2 text-white"
               >
-                Buy me ☕
+                <span className="hidden sm:inline">Buy me</span> ☕
               </button>
             </li>
             <li>

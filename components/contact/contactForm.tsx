@@ -1,3 +1,5 @@
+"use client";
+
 import { UserContext } from "@/context/user";
 import Image from "next/image";
 import { useContext, useState } from "react";

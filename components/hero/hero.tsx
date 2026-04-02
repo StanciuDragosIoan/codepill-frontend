@@ -1,3 +1,5 @@
+"use client";
+
 import { UserContext } from "@/context/user";
 import { useContext } from "react";
 import classes from "./hero.module.css";
