@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useContext, type JSX } from "react";
-import { sendAnalyticsEvent } from "@/lib/analytics";
+import { useContext, type JSX } from "react";
 import MainNavigation from "./navigation/main-navigation";
 import classes from "./layout.module.css";
 import globalClasses from "@/styles/shared.module.css";
@@ -19,10 +18,6 @@ export type Props = {
 
 function Layout({ children }: Props) {
   const { theme } = useContext(UserContext);
-
-  useEffect(() => {
-    sendAnalyticsEvent("page_view");
-  }, []);
 
   return (
     <div className={theme === "dark" ? globalClasses.darkBg : globalClasses.lightBg}>
